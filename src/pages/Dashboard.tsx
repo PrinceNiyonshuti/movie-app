@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Movies from "../components/Movies";
 
 function Dashboard() {
 	const [settings, setSettings] = useState<null | boolean>(false);
@@ -119,6 +120,13 @@ function Dashboard() {
 					</div>
 				</div>
 			</nav>
+			<div className="bg-gray-100 px-2">
+				<div className="container mx-auto">
+					<div className="flex flex-wrap -mx-2 ">
+						<Movies />
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }
