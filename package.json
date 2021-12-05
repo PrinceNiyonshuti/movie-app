@@ -11,6 +11,7 @@
 		"@types/node": "^12.20.37",
 		"@types/react": "^17.0.37",
 		"@types/react-dom": "^17.0.11",
+		"concurrently": "^6.4.0",
 		"firebase": "^9.6.0",
 		"json-server": "^0.17.0",
 		"react": "^17.0.2",
@@ -24,7 +25,9 @@
 		"start": "craco start",
 		"build": "craco build",
 		"test": "craco test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"db": "json-server --watch db/data.json --port 8000",
+		"prince": "concurrently \"npm run start\" \"npm run db\""
 	},
 	"eslintConfig": {
 		"extends": [

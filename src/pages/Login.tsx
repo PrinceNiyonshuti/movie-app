@@ -25,22 +25,33 @@ function Login() {
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Login
 							</h1>
-							<div>
-								<label className="block text-sm">Email</label>
-								<input
-									type="email"
-									className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder=""
-								/>
-							</div>
-							<div>
-								<label className="block mt-4 text-sm">Password</label>
-								<input
-									className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder=""
-									type="password"
-								/>
-							</div>
+							<form>
+								<div>
+									<label className="block text-sm">Email</label>
+									<input
+										type="email"
+										id="email"
+										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										placeholder=""
+									/>
+								</div>
+								<div>
+									<label className="block mt-4 text-sm">Password</label>
+									<input
+										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										placeholder=""
+										type="password"
+									/>
+								</div>
+								{/* <button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+									Log in
+								</button> */}
+							</form>
+							<Link to="Dashboard">
+								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+									Log in
+								</button>
+							</Link>
 							<p className="mt-4">
 								Don't have an account ?
 								<Link
@@ -49,11 +60,6 @@ function Login() {
 									Register
 								</Link>
 							</p>
-							<Link to="Dashboard">
-								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
-									Log in
-								</button>
-							</Link>
 							<hr className="my-8" />
 
 							<div className="flex items-center justify-center gap-4">

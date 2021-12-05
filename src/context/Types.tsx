@@ -1,8 +1,6 @@
 /** @format */
 
 export interface IRegister {
-	name: string;
-	username: string;
 	email: string;
 	password: string;
 }
@@ -13,7 +11,6 @@ export interface ILogin {
 }
 
 export type AuthContextState = {
-	token: string | null;
+	currentUser: string | null;
 	register: (user: IRegister) => void;
-	login: (user: ILogin) => void;
 };

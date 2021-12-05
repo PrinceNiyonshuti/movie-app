@@ -1,20 +1,27 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
+/** @format */
+
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import AddMovie from "../pages/AddMovie";
+import Dashboard from "../pages/Dashboard";
+import Favorite from "../pages/Favorite";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import WathcList from "../pages/WathcList";
 
 function Layout() {
-    return (
-        <div>
-            <Routes>
-                <Route path="/" element={<Login/>}/>
-                <Route path="/Register" element={<Register/>}/>
-                <Route path="/Dashboard" element={<Dashboard/>}/>
-                <Route path="/AddMovie" element={<Login/>}/>
-            </Routes>
-        </div>
-    )
+	return (
+		<div>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/Register" element={<Register />} />
+				<Route path="/Dashboard" element={<Dashboard />} />
+				<Route path="/AddMovie" element={<AddMovie />} />
+				<Route path="/Favorite" element={<Favorite />} />
+				<Route path="/WatchList" element={<WathcList />} />
+			</Routes>
+		</div>
+	);
 }
 
-export default Layout
+export default Layout;

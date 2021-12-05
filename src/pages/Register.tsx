@@ -1,9 +1,24 @@
 /** @format */
 
-import React from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 function Register() {
+	// Form data
+	const emailRef = useRef<HTMLInputElement>(null);
+	const passwordRef = useRef<HTMLInputElement>(null);
+	const passwordConfirmRef = useRef<HTMLInputElement>(null);
+	const registerForm = useRef<HTMLFormElement>(null);
+
+	const handleForm = async () => {
+		const email = emailRef.current?.value;
+		const password = passwordRef.current?.value;
+		const passwordConfirm = passwordConfirmRef.current?.value;
+
+		const user = { email: email, password: password, confirm: passwordConfirm };
+		console.log(user);
+	};
+
 	return (
 		<div className="flex items-center min-h-screen bg-gray-50">
 			<div className="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
@@ -25,40 +40,47 @@ function Register() {
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Create your account
 							</h1>
-							<div>
-								<label className="block text-sm">Email</label>
-								<input
-									type="email"
-									className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder=""
-								/>
-							</div>
-							<div>
-								<label className="block mt-4 text-sm">Password</label>
-								<input
-									className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder=""
-									type="password"
-								/>
-							</div>
-							<div>
-								<label className="block mt-4 text-sm">Password</label>
-								<input
-									className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-									placeholder=""
-									type="password"
-								/>
-							</div>
+							<form onSubmit={handleForm} ref={registerForm}>
+								<div>
+									<label className="block text-sm">Email</label>
+									<input
+										type="email"
+										id="email"
+										ref={emailRef}
+										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										placeholder="Enter your E-mail"
+									/>
+								</div>
+								<div>
+									<label className="block mt-4 text-sm">Password</label>
+									<input
+										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										placeholder=" **************** "
+										type="password"
+										id="password"
+										ref={passwordRef}
+									/>
+								</div>
+								<div>
+									<label className="block mt-4 text-sm">Confirm Password</label>
+									<input
+										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
+										placeholder=" **************** "
+										type="password"
+										id="passwordConfirm"
+										ref={passwordConfirmRef}
+									/>
+								</div>
+								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+									Register
+								</button>
+							</form>
 							<p className="mt-4">
 								have an account ?
 								<Link to="/" className="text-sm text-blue-600 hover:underline">
 									Login
 								</Link>
 							</p>
-
-							<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
-								Register
-							</button>
 
 							<hr className="my-8" />
 
