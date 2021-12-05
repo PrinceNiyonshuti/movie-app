@@ -20,7 +20,7 @@ const Movies = (props: IMovie) => {
 			},
 			body: JSON.stringify(fav),
 		}).then(() => {
-			window.location.reload();
+			//action done
 		});
 	};
 
@@ -36,7 +36,7 @@ const Movies = (props: IMovie) => {
 			},
 			body: JSON.stringify(voter),
 		}).then(() => {
-			window.location.reload();
+			//action done
 		});
 	};
 
@@ -56,7 +56,7 @@ const Movies = (props: IMovie) => {
 			},
 			body: JSON.stringify(watcher),
 		}).then(() => {
-			window.location.reload();
+			//action done
 		});
 	};
 	return (

@@ -18,9 +18,7 @@ function Dashboard() {
 				setMovieData(data);
 			});
 	};
-	useEffect(() => {
-		getMovies();
-	}, []);
+	useEffect(() => getMovies());
 	return (
 		<div>
 			<NavBar />
