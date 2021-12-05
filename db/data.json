@@ -8,7 +8,7 @@
       "publisher": "Prince",
       "votes": 7,
       "favorite": false,
-      "watch": false,
+      "watch": true,
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
       "year": "2021-11-30",
       "description": "dasdasd",
       "publisher": "Prince",
-      "votes": 9,
+      "votes": 12,
       "favorite": false,
       "watch": false,
       "id": 2
@@ -41,7 +41,7 @@
       "publisher": "Prince",
       "votes": 0,
       "favorite": true,
-      "watch": false,
+      "watch": true,
       "id": 4
     }
   ]

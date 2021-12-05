@@ -20,7 +20,6 @@ const Movies = (props: IMovie) => {
 			},
 			body: JSON.stringify(fav),
 		}).then(() => {
-			alert(`Favorited ${movieId} and ${favorite}`);
 			window.location.reload();
 		});
 	};
@@ -37,13 +36,28 @@ const Movies = (props: IMovie) => {
 			},
 			body: JSON.stringify(voter),
 		}).then(() => {
-			alert(`Voted ${movieId} and ${votes}`);
+			window.location.reload();
 		});
 	};
 
 	// Handle Likes
-	const handleLike = () => {
-		alert("Liked");
+	const handleWatchList = (movieId: number, likeStat: boolean) => {
+		let watch = false;
+		if (likeStat) {
+			watch = false;
+		} else {
+			watch = true;
+		}
+		const watcher = { watch };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(watcher),
+		}).then(() => {
+			window.location.reload();
+		});
 	};
 	return (
 		<div className="flex flex-wrap -mx-2 ">
@@ -96,8 +110,8 @@ const Movies = (props: IMovie) => {
 
 							<h2 className="mt-2 mb-2  font-bold">{movie.title}</h2>
 							<p className="text-sm">
-								{movie.description.length > 80
-									? movie.description.slice(0, 80) + "..."
+								{movie.description.length > 70
+									? movie.description.slice(0, 70) + "..."
 									: movie.description}
 							</p>
 						</div>
@@ -115,32 +129,43 @@ const Movies = (props: IMovie) => {
 									<span className="ml-2">{movie.votes} Votes</span>
 								</div>
 								<div className="pr-4 flex items-center text-sm text-gray-600">
-									<svg
-										onDoubleClick={handleLike}
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-6 w-6"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor">
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth={2}
-											d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-										/>
-									</svg>
+									{movie.watch ? (
+										<svg
+											onDoubleClick={() =>
+												handleWatchList(movie.id, movie.watch)
+											}
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-6 w-6"
+											viewBox="0 0 24 24"
+											fill="red">
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={2}
+												d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+											/>
+										</svg>
+									) : (
+										<svg
+											onDoubleClick={() =>
+												handleWatchList(movie.id, movie.watch)
+											}
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-6 w-6"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor">
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={2}
+												d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+											/>
+										</svg>
+									)}
 								</div>
 							</div>
 						</div>
-						{/* <div className="p-4 flex items-center text-sm text-gray-600">
-							<svg
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-4 w-4 fill-current text-yellow-500">
-								<path d="M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z"></path>
-							</svg>
-							<span className="ml-2">{movie.votes} Votes</span>
-						</div> */}
 					</Link>
 				</div>
 			))}
