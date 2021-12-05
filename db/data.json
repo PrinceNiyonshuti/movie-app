@@ -17,8 +17,8 @@
       "year": "2021-11-30",
       "description": "dasdasd",
       "publisher": "Prince",
-      "votes": 8,
-      "favorite": true,
+      "votes": 9,
+      "favorite": false,
       "watch": false,
       "id": 2
     },
@@ -29,7 +29,7 @@
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.",
       "publisher": "Prince",
       "votes": 4,
-      "favorite": false,
+      "favorite": true,
       "watch": false,
       "id": 3
     },
@@ -40,7 +40,7 @@
       "description": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "Prince",
       "votes": 0,
-      "favorite": false,
+      "favorite": true,
       "watch": false,
       "id": 4
     }

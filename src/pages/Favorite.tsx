@@ -34,8 +34,9 @@ function Favorite() {
 					<div>
 						{movieData
 							.filter((movies) => movies.favorite == true)
-							.map((favMovie) => (
-								<Movies movie={movieData} />
+							.map((movie) => (
+								<p>{movie.title}</p>
+								
 							))
 						}
 					</div>

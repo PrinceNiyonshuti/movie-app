@@ -5,8 +5,24 @@ import { IMovie } from "../context/Types";
 
 const Movies = (props: IMovie) => {
 	// Handle favorite
-	const handleFavorite = () => {
-		alert("favorited");
+	const handleFavorite = (movieId: number, favStat: boolean) => {
+		let favorite = false;
+		if (favStat) {
+			favorite = false;
+		} else {
+			favorite = true;
+		}
+		const fav = { favorite };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(fav),
+		}).then(() => {
+			alert(`Favorited ${movieId} and ${favorite}`);
+			window.location.reload();
+		});
 	};
 
 	// Handle user votes
@@ -34,7 +50,7 @@ const Movies = (props: IMovie) => {
 			{props.movie.map((movie) => (
 				<div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
 					<Link
-						to="/Dashboard"
+						to=""
 						className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
 						<div className="relative pb-48 overflow-hidden">
 							<img
@@ -49,7 +65,7 @@ const Movies = (props: IMovie) => {
 							</span>
 							{movie.favorite ? (
 								<svg
-									onDoubleClick={handleFavorite}
+									onDoubleClick={() => handleFavorite(movie.id, movie.favorite)}
 									xmlns="http://www.w3.org/2000/svg"
 									className="h-6 w-6 float-right"
 									viewBox="0 0 24 24"
@@ -63,7 +79,7 @@ const Movies = (props: IMovie) => {
 								</svg>
 							) : (
 								<svg
-									onDoubleClick={handleFavorite}
+									onDoubleClick={() => handleFavorite(movie.id, movie.favorite)}
 									xmlns="http://www.w3.org/2000/svg"
 									className="h-6 w-6 float-right"
 									fill="none"
