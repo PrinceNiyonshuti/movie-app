@@ -1,23 +1,34 @@
 /** @format */
 
-import React from "react";
 import { Link } from "react-router-dom";
 import { IMovie } from "../context/Types";
 
-// type IMovie {
-// 	movies: {
-// 		title: string;
-// 		genre: string;
-// 		year: string;
-// 		description: string;
-// 		publisher: string;
-// 		votes: number;
-// 		favorite: boolean;
-// 		watch: boolean;
-// 		id: number;
-// 	}[];
-// }
 const Movies = (props: IMovie) => {
+	// Handle favorite
+	const handleFavorite = () => {
+		alert("favorited");
+	};
+
+	// Handle user votes
+	const handleVote = (movieId: number, vote: number) => {
+		const vot = 1;
+		const votes = vote + vot;
+		const voter = { votes };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(voter),
+		}).then(() => {
+			alert(`Voted ${movieId} and ${votes}`);
+		});
+	};
+
+	// Handle Likes
+	const handleLike = () => {
+		alert("Liked");
+	};
 	return (
 		<div className="flex flex-wrap -mx-2 ">
 			{props.movie.map((movie) => (
@@ -36,19 +47,37 @@ const Movies = (props: IMovie) => {
 							<span className="inline-block px-2 py-1 leading-none bg-blue-300 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-xs">
 								{movie.genre}
 							</span>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-6 w-6 float-right"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor">
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-								/>
-							</svg>
+							{movie.favorite ? (
+								<svg
+									onDoubleClick={handleFavorite}
+									xmlns="http://www.w3.org/2000/svg"
+									className="h-6 w-6 float-right"
+									viewBox="0 0 24 24"
+									fill="black">
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+									/>
+								</svg>
+							) : (
+								<svg
+									onDoubleClick={handleFavorite}
+									xmlns="http://www.w3.org/2000/svg"
+									className="h-6 w-6 float-right"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor">
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+									/>
+								</svg>
+							)}
+
 							<h2 className="mt-2 mb-2  font-bold">{movie.title}</h2>
 							<p className="text-sm">
 								{movie.description.length > 80
@@ -60,6 +89,7 @@ const Movies = (props: IMovie) => {
 							<div className="button-container flex justify-between mb-2">
 								<div className="p-2 flex items-center text-sm text-gray-600">
 									<svg
+										onDoubleClick={() => handleVote(movie.id, movie.votes)}
 										xmlns="http://www.w3.org/2000/svg"
 										className="h-5 w-5"
 										viewBox="0 0 20 20"
@@ -70,6 +100,7 @@ const Movies = (props: IMovie) => {
 								</div>
 								<div className="pr-4 flex items-center text-sm text-gray-600">
 									<svg
+										onDoubleClick={handleLike}
 										xmlns="http://www.w3.org/2000/svg"
 										className="h-6 w-6"
 										fill="none"

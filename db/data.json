@@ -1,37 +1,48 @@
 {
-	"movieList": [
-		{
-			"title": "asdasd",
-			"genre": "Sci-Fi",
-			"year": "2021-12-08",
-			"description": "asdasd",
-			"publisher": "Prince",
-			"votes": 0,
-			"favorite": false,
-			"watch": false,
-			"id": 1
-		},
-		{
-			"title": "asdas",
-			"genre": "Action",
-			"year": "2021-11-30",
-			"description": "dasdasd",
-			"publisher": "Prince",
-			"votes": 0,
-			"favorite": false,
-			"watch": false,
-			"id": 2
-		},
-		{
-			"title": "Amazing Spider Man",
-			"genre": "Action",
-			"year": "2008-07-09",
-			"description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.",
-			"publisher": "Prince",
-			"votes": 0,
-			"favorite": false,
-			"watch": false,
-			"id": 3
-		}
-	]
+  "movieList": [
+    {
+      "title": "asdasd",
+      "genre": "Sci-Fi",
+      "year": "2021-12-08",
+      "description": "asdasd",
+      "publisher": "Prince",
+      "votes": 7,
+      "favorite": false,
+      "watch": false,
+      "id": 1
+    },
+    {
+      "title": "asdas",
+      "genre": "Action",
+      "year": "2021-11-30",
+      "description": "dasdasd",
+      "publisher": "Prince",
+      "votes": 8,
+      "favorite": true,
+      "watch": false,
+      "id": 2
+    },
+    {
+      "title": "Amazing Spider Man",
+      "genre": "Action",
+      "year": "2008-07-09",
+      "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.",
+      "publisher": "Prince",
+      "votes": 4,
+      "favorite": false,
+      "watch": false,
+      "id": 3
+    },
+    {
+      "title": "Venom No carnage",
+      "genre": "Commedy",
+      "year": "2021-12-24",
+      "description": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+      "publisher": "Prince",
+      "votes": 0,
+      "favorite": false,
+      "watch": false,
+      "id": 4
+    }
+  ]
 }
