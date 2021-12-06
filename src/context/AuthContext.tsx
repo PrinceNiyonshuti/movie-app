@@ -8,6 +8,7 @@ const contextDefaultValue: AuthContextState = {
 	currentUser: "",
 	register: () => {},
 	login: () => {},
+	logout: () => {},
 };
 
 export const AuthContext = createContext(contextDefaultValue);
@@ -29,6 +30,11 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		return auth.signInWithEmailAndPassword(email, password);
 	};
 
+	// Sign Out
+	const logout = () => {
+		return auth.signOut();
+	};
+
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			setCurrentUser(user);
@@ -41,6 +47,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		currentUser,
 		register,
 		login,
+		logout,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

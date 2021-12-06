@@ -1,17 +1,39 @@
 /** @format */
 
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 
 function NavBar() {
 	// Context data
-	const { currentUser } = useContext(AuthContext);
+	const { currentUser, logout } = useContext(AuthContext);
+	const history = useNavigate();
 
 	// Menu toggle
 	const [settings, setSettings] = useState<null | boolean>(false);
 	const showMenu = () => {
 		setSettings(!settings);
+	};
+
+	// Logging Out
+	const handleLogOut = async () => {
+		try {
+			await logout();
+			Swal.fire({
+				title: "Logged In",
+				icon: "success",
+				confirmButtonText: "OK",
+			});
+			history("/");
+		} catch {
+			Swal.fire({
+				title: "Failed To Log Out",
+				text: ``,
+				icon: "error",
+				confirmButtonText: "OK",
+			});
+		}
 	};
 	return (
 		<nav className="bg-gray-800">
@@ -88,7 +110,8 @@ function NavBar() {
 										Add Movie
 									</Link>
 									<Link
-										to="/"
+										to="/Dashboard"
+										onClick={handleLogOut}
 										className="block px-4 py-2 text-sm text-gray-700">
 										Sign out
 									</Link>
