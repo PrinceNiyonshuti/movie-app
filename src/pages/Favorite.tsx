@@ -9,7 +9,7 @@ function Favorite() {
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
 	// Retrieve all Movies
 	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList`)
+		fetch(`http://localhost:8000/movieList?favorite=true`)
 			.then((res) => {
 				return res.json();
 			})
@@ -32,13 +32,12 @@ function Favorite() {
 						</h1>
 					</div>
 					<div>
-						{movieData
+						{/* {movieData
 							.filter((movies) => movies.favorite == true)
 							.map((movie) => (
 								<p>{movie.title}</p>
-								
-							))
-						}
+							))} */}
+						<Movies movie={movieData} />
 					</div>
 				</div>
 			</div>

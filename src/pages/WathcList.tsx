@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Movies from '../components/Movies';
 import NavBar from '../components/NavBar';
 import { IMovie } from "../context/Types";
 
@@ -6,7 +7,7 @@ function WathcList() {
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
 	// Retrieve all Movies
 	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList`)
+		fetch(`http://localhost:8000/movieList?watch=true`)
 			.then((res) => {
 				return res.json();
 			})
@@ -28,11 +29,13 @@ function WathcList() {
 							</h1>
 						</div>
 						<div>
-							{movieData
+							<Movies movie={movieData} />
+							{/* {movieData
 								.filter((movies) => movies.watch == true)
 								.map((movie) => (
-									<p>{movie.title}</p>
-								))}
+									// <p>{ movie.title }</p>
+									<Movies movie={movieData} />
+								))} */}
 						</div>
 					</div>
 				</div>

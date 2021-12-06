@@ -18,18 +18,37 @@ function Dashboard() {
 				setMovieData(data);
 			});
 	};
-	useEffect(() => getMovies());
+
+	// Filter Movies
+	const getFilteredMovies = (e: React.SyntheticEvent<EventTarget>) => {
+		let search = (e.target as HTMLSelectElement).value;
+		if (search === "all") {
+			getMovies();
+		} else {
+			fetch(`http://localhost:8000/movieList?genre=${search}`)
+				.then((res) => {
+					return res.json();
+				})
+				.then((data) => {
+					setMovieData(data);
+				});
+		}
+	};
+	useEffect(() => {
+		getMovies();
+	}, []);
 	return (
 		<div>
 			<NavBar />
-			<div className="bg-gray-100 px-2">
+			<div className="h-screen bg-gray-100 px-2">
 				<div className="container mx-auto">
 					<div className="float-right mt-2">
 						<select
+							onChange={getFilteredMovies}
 							className=" float-right px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 							placeholder="Movie Genre"
 							required>
-							<option value="0">-- Choose Category --</option>
+							<option value="all">-- Choose Category --</option>
 							<option value="Action">Action</option>
 							<option value="Commedy">Commedy</option>
 							<option value="Sci-Fi">Sci-Fi</option>

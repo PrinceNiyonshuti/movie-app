@@ -1,9 +1,11 @@
 /** @format */
 
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 const AddMovie = () => {
+	const navigate = useNavigate();
 	// Form variables
 	const movieTitle = useRef<HTMLInputElement>(null);
 	const movieGenre = useRef<HTMLSelectElement>(null);
@@ -38,7 +40,7 @@ const AddMovie = () => {
 			body: JSON.stringify(movie),
 		}).then(() => {
 			console.log("New Movie added");
-			window.location.reload();
+			navigate("/Dashboard");
 		});
 	};
 	return (
