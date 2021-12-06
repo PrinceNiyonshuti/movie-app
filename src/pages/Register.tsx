@@ -1,22 +1,56 @@
 /** @format */
 
-import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useRef, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../context/AuthContext";
+// import { IRegister } from "../context/Types";
 
 function Register() {
+	// Context data
+	const { register } = useContext(AuthContext);
+	const history = useNavigate();
+
 	// Form data
 	const emailRef = useRef<HTMLInputElement>(null);
 	const passwordRef = useRef<HTMLInputElement>(null);
 	const passwordConfirmRef = useRef<HTMLInputElement>(null);
 	const registerForm = useRef<HTMLFormElement>(null);
 
-	const handleForm = async () => {
+	const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
 		const email = emailRef.current?.value;
 		const password = passwordRef.current?.value;
 		const passwordConfirm = passwordConfirmRef.current?.value;
+		const user = { email, password };
 
-		const user = { email: email, password: password, confirm: passwordConfirm };
-		console.log(user);
+		if (password !== passwordConfirm) {
+			return Swal.fire({
+				title: "Password Doesn't Match",
+				text: ``,
+				icon: "error",
+				confirmButtonText: "Ok",
+			});
+		}
+
+		try {
+			await register(`${email}`, `${password}`);
+			Swal.fire({
+				title: "Account Created",
+				text: `Redirecting To Dashboard`,
+				icon: "success",
+				confirmButtonText: "OK",
+			});
+			// history("/Dashboard");
+		} catch {
+			Swal.fire({
+				title: "Failed To Crate Account",
+				text: ``,
+				icon: "info",
+				confirmButtonText: "OK",
+			});
+		}
 	};
 
 	return (

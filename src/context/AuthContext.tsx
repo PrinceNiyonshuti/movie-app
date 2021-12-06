@@ -1,7 +1,8 @@
 /** @format */
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { AuthContextState, IRegister } from "./Types";
+import { auth } from "../firebase";
 
 const contextDefaultValue: AuthContextState = {
 	currentUser: "",
@@ -15,12 +16,20 @@ type AuthContextProviderProps = {
 };
 
 const AuthProvider = ({ children }: AuthContextProviderProps) => {
-	const [currentUser, setCurrentUser] = useState<string | null>("");
+	const [currentUser, setCurrentUser] = useState<any | null>();
 
 	// Create Account
-	const register = async (user: IRegister) => {
-		console.log(user);
+	const register = async (email: string, password: string) => {
+		return auth.createUserWithEmailAndPassword(email, password);
 	};
+
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			setCurrentUser(user);
+		});
+
+		return unsubscribe;
+	}, []);
 
 	const value = {
 		currentUser,

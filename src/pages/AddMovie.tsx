@@ -41,7 +41,6 @@ const AddMovie = () => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(movie),
 		}).then(() => {
-			// alert("New Movie added");
 			Swal.fire({
 				title: "Movie Successfully Created",
 				text: `${title} Saved`,
@@ -49,7 +48,7 @@ const AddMovie = () => {
 				confirmButtonText: "Done",
 			}).then(function () {
 				window.location.reload();
-			});;
+			});
 		});
 	};
 	return (

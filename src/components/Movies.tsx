@@ -27,6 +27,8 @@ const Movies = (props: IMovie) => {
 				text: "Movie added to favorite",
 				icon: "success",
 				confirmButtonText: "Done",
+			}).then(function () {
+				window.location.reload();
 			});
 		});
 	};
@@ -49,6 +51,8 @@ const Movies = (props: IMovie) => {
 				text: "Thanks For Voting The Movie",
 				icon: "success",
 				confirmButtonText: "Done",
+			}).then(function () {
+				window.location.reload();
 			});
 		});
 	};
@@ -75,6 +79,8 @@ const Movies = (props: IMovie) => {
 				text: "Movie added to Watch List",
 				icon: "success",
 				confirmButtonText: "Done",
+			}).then(function () {
+				window.location.reload();
 			});
 		});
 	};
