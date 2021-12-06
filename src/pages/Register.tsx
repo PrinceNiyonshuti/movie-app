@@ -23,7 +23,6 @@ function Register() {
 		const email = emailRef.current?.value;
 		const password = passwordRef.current?.value;
 		const passwordConfirm = passwordConfirmRef.current?.value;
-		const user = { email, password };
 
 		if (password !== passwordConfirm) {
 			return Swal.fire({
@@ -42,10 +41,10 @@ function Register() {
 				icon: "success",
 				confirmButtonText: "OK",
 			});
-			// history("/Dashboard");
+			history("/Dashboard");
 		} catch {
 			Swal.fire({
-				title: "Failed To Crate Account",
+				title: "Failed To Create Account",
 				text: ``,
 				icon: "info",
 				confirmButtonText: "OK",
@@ -83,6 +82,7 @@ function Register() {
 										ref={emailRef}
 										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
 										placeholder="Enter your E-mail"
+										required
 									/>
 								</div>
 								<div>
@@ -93,6 +93,7 @@ function Register() {
 										type="password"
 										id="password"
 										ref={passwordRef}
+										required
 									/>
 								</div>
 								<div>
@@ -103,6 +104,7 @@ function Register() {
 										type="password"
 										id="passwordConfirm"
 										ref={passwordConfirmRef}
+										required
 									/>
 								</div>
 								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">

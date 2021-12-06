@@ -1,8 +1,41 @@
 /** @format */
-
-import { Link } from "react-router-dom";
+import { useRef, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
+	// context data
+	const { login } = useContext(AuthContext);
+	const history = useNavigate();
+
+	// Form data
+	const emailRef = useRef<HTMLInputElement>(null);
+	const passwordRef = useRef<HTMLInputElement>(null);
+
+	const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		const email = emailRef.current?.value;
+		const password = passwordRef.current?.value;
+
+		try {
+			await login(`${email}`, `${password}`);
+			Swal.fire({
+				title: "Logged In",
+				icon: "success",
+				confirmButtonText: "OK",
+			});
+			history("/Dashboard");
+		} catch {
+			Swal.fire({
+				title: "Invalid Credentials",
+				text: ``,
+				icon: "error",
+				confirmButtonText: "OK",
+			});
+		}
+	};
 	return (
 		<div className="flex items-center min-h-screen bg-gray-50">
 			<div className="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
@@ -24,35 +57,35 @@ function Login() {
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Login
 							</h1>
-							<form>
+							<form onSubmit={handleLogin}>
 								<div>
 									<label className="block text-sm">Email</label>
 									<input
 										type="email"
 										id="email"
+										ref={emailRef}
 										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-										placeholder=""
+										placeholder="Enter your E-mail"
+										required
 									/>
 								</div>
 								<div>
 									<label className="block mt-4 text-sm">Password</label>
 									<input
 										className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
-										placeholder=""
+										placeholder=" **************** "
 										type="password"
+										id="password"
+										ref={passwordRef}
+										required
 									/>
 								</div>
-								{/* <button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
-									Log in
-								</button> */}
-							</form>
-							<Link to="Dashboard">
 								<button className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
 									Log in
 								</button>
-							</Link>
+							</form>
 							<p className="mt-4">
-								Don't have an account ?
+								Need an account ?
 								<Link
 									to="Register"
 									className="text-sm text-blue-600 hover:underline">

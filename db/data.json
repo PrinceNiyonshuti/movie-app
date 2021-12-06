@@ -2,30 +2,6 @@
   "movieList": [
     {
       "cover": "https://source.unsplash.com/1600x900/?random",
-      "title": "asdasd",
-      "genre": "Sci-Fi",
-      "year": "2021-12-08",
-      "description": "asdasd",
-      "publisher": "Prince",
-      "votes": 11,
-      "favorite": false,
-      "watch": false,
-      "id": 1
-    },
-    {
-      "cover": "https://source.unsplash.com/1600x900/?random",
-      "title": "asdas",
-      "genre": "Action",
-      "year": "2021-11-30",
-      "description": "dasdasd",
-      "publisher": "Prince",
-      "votes": 16,
-      "favorite": false,
-      "watch": false,
-      "id": 2
-    },
-    {
-      "cover": "https://source.unsplash.com/1600x900/?random",
       "title": "Amazing Spider Man",
       "genre": "Action",
       "year": "2008-07-09",
@@ -73,18 +49,6 @@
       "id": 6
     },
     {
-      "cover": "https://source.unsplash.com/1600x900/?movie,zcsz ",
-      "title": "zcsz ",
-      "genre": "Romantic",
-      "year": "2021-12-23",
-      "description": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-      "publisher": "Prince",
-      "votes": 4,
-      "favorite": false,
-      "watch": false,
-      "id": 7
-    },
-    {
       "cover": "https://source.unsplash.com/1600x900/?movie,Mad Max",
       "title": "Mad Max",
       "genre": "Romantic",
@@ -95,18 +59,6 @@
       "favorite": false,
       "watch": false,
       "id": 8
-    },
-    {
-      "cover": "https://source.unsplash.com/1600x900/?movie,sifsldkf",
-      "title": "sifsldkf",
-      "genre": "Sci-Fi",
-      "year": "2021-12-24",
-      "description": "xbkjsdv,",
-      "publisher": "Prince",
-      "votes": 1,
-      "favorite": false,
-      "watch": false,
-      "id": 9
     },
     {
       "cover": "https://source.unsplash.com/1600x900/?movie,The Jungle book",
@@ -140,7 +92,7 @@
       "description": "Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "Prince",
       "votes": 0,
-      "favorite": true,
+      "favorite": false,
       "watch": true,
       "id": 12
     },
@@ -175,7 +127,7 @@
       "year": "2021-11-29",
       "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
       "publisher": "Prince",
-      "votes": 4,
+      "votes": 5,
       "favorite": true,
       "watch": true,
       "id": 15
@@ -187,10 +139,22 @@
       "year": "2021-12-22",
       "description": "dasdasd",
       "publisher": "Prince",
-      "votes": 0,
+      "votes": 1,
       "favorite": false,
       "watch": false,
       "id": 16
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,Testing Data",
+      "title": "Testing Data",
+      "genre": "Action",
+      "year": "2021-12-17",
+      "description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+      "publisher": "Prince",
+      "votes": 0,
+      "favorite": true,
+      "watch": false,
+      "id": 17
     }
   ]
 }

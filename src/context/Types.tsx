@@ -26,6 +26,7 @@ export interface ILogin {
 }
 
 export type AuthContextState = {
-	currentUser: string | null;
+	currentUser: any | null;
 	register: (email: string, password: string) => void;
+	login: (email: string, password: string) => void;
 };

@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import { IMovie } from "../context/Types";
 
 function Dashboard() {
+	// State Data
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
 
 	// Retrieve all Movies
