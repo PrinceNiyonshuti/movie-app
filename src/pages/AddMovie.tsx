@@ -1,6 +1,7 @@
 /** @format */
 
 import { useRef } from "react";
+import Swal from "sweetalert2";
 import NavBar from "../components/NavBar";
 
 const AddMovie = () => {
@@ -11,7 +12,8 @@ const AddMovie = () => {
 	const movieDescr = useRef<HTMLTextAreaElement>(null);
 	const movieForm = useRef<HTMLFormElement>(null);
 
-	const newMovie = () => {
+	const newMovie = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
 		const title = movieTitle.current?.value;
 		const genre = movieGenre.current?.value;
 		const year = movieYear.current?.value;
@@ -39,8 +41,15 @@ const AddMovie = () => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(movie),
 		}).then(() => {
-			alert("New Movie added");
-			window.location.reload();
+			// alert("New Movie added");
+			Swal.fire({
+				title: "Movie Successfully Created",
+				text: `${title} Saved`,
+				icon: "success",
+				confirmButtonText: "Done",
+			}).then(function () {
+				window.location.reload();
+			});;
 		});
 	};
 	return (
