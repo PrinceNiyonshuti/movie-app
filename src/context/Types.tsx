@@ -7,6 +7,7 @@ export interface IRegister {
 
 export interface IMovie {
 	movie: {
+		cover: string;
 		title: string;
 		genre: string;
 		year: string;

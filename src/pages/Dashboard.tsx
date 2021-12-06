@@ -10,7 +10,7 @@ function Dashboard() {
 
 	// Retrieve all Movies
 	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList`)
+		fetch(`http://localhost:8000/movieList?_sort=id&_order=DESC`)
 			.then((res) => {
 				return res.json();
 			})
@@ -40,7 +40,7 @@ function Dashboard() {
 	return (
 		<div>
 			<NavBar />
-			<div className="h-screen bg-gray-100 px-2">
+			<div className="h-full bg-gray-100 px-2">
 				<div className="container mx-auto">
 					<div className="float-right mt-2">
 						<select

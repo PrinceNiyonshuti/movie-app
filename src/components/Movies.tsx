@@ -1,6 +1,7 @@
 /** @format */
 
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { IMovie } from "../context/Types";
 
 const Movies = (props: IMovie) => {
@@ -21,6 +22,12 @@ const Movies = (props: IMovie) => {
 			body: JSON.stringify(fav),
 		}).then(() => {
 			//action done
+			Swal.fire({
+				title: "Favorited Movie",
+				text: "Movie added to favorite",
+				icon: "success",
+				confirmButtonText: "Done",
+			});
 		});
 	};
 
@@ -37,7 +44,12 @@ const Movies = (props: IMovie) => {
 			body: JSON.stringify(voter),
 		}).then(() => {
 			//action done
-			console.log("done");
+			Swal.fire({
+				title: "Voted Movie",
+				text: "Thanks For Voting The Movie",
+				icon: "success",
+				confirmButtonText: "Done",
+			});
 		});
 	};
 
@@ -58,19 +70,23 @@ const Movies = (props: IMovie) => {
 			body: JSON.stringify(watcher),
 		}).then(() => {
 			//action done
+			Swal.fire({
+				title: "Watch Listed Movie",
+				text: "Movie added to Watch List",
+				icon: "success",
+				confirmButtonText: "Done",
+			});
 		});
 	};
 	return (
 		<div className="flex flex-wrap -mx-2 ">
 			{props.movie.map((movie) => (
 				<div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4" key={movie.id}>
-					<Link
-						to=""
-						className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+					<div className="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
 						<div className="relative pb-48 overflow-hidden">
 							<img
 								className="absolute inset-0 h-full w-full object-cover"
-								src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+								src={movie.cover}
 								alt=""
 							/>
 						</div>
@@ -106,8 +122,10 @@ const Movies = (props: IMovie) => {
 									/>
 								</svg>
 							)}
+							<Link to={`/Detail/${movie.id}`}>
+								<h2 className="mt-2 mb-2  font-bold">{movie.title}</h2>
+							</Link>
 
-							<h2 className="mt-2 mb-2  font-bold">{movie.title}</h2>
 							<p className="text-sm">
 								{movie.description.length > 70
 									? movie.description.slice(0, 70) + "..."
@@ -161,7 +179,7 @@ const Movies = (props: IMovie) => {
 								</div>
 							</div>
 						</div>
-					</Link>
+					</div>
 				</div>
 			))}
 		</div>

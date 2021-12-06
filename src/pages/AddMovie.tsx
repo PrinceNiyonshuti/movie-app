@@ -1,11 +1,9 @@
 /** @format */
 
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 const AddMovie = () => {
-	const navigate = useNavigate();
 	// Form variables
 	const movieTitle = useRef<HTMLInputElement>(null);
 	const movieGenre = useRef<HTMLSelectElement>(null);
@@ -22,8 +20,10 @@ const AddMovie = () => {
 		const votes = 0;
 		const favorite = false;
 		const watch = false;
+		const cover = `https://source.unsplash.com/1600x900/?movie,` + title;
 
 		const movie = {
+			cover,
 			title,
 			genre,
 			year,
@@ -39,8 +39,8 @@ const AddMovie = () => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(movie),
 		}).then(() => {
-			console.log("New Movie added");
-			navigate("/Dashboard");
+			alert("New Movie added");
+			window.location.reload();
 		});
 	};
 	return (

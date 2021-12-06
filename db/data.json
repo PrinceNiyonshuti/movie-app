@@ -1,6 +1,7 @@
 {
   "movieList": [
     {
+      "cover": "https://source.unsplash.com/1600x900/?random",
       "title": "asdasd",
       "genre": "Sci-Fi",
       "year": "2021-12-08",
@@ -12,6 +13,7 @@
       "id": 1
     },
     {
+      "cover": "https://source.unsplash.com/1600x900/?random",
       "title": "asdas",
       "genre": "Action",
       "year": "2021-11-30",
@@ -23,6 +25,7 @@
       "id": 2
     },
     {
+      "cover": "https://source.unsplash.com/1600x900/?random",
       "title": "Amazing Spider Man",
       "genre": "Action",
       "year": "2008-07-09",
@@ -30,10 +33,11 @@
       "publisher": "Prince",
       "votes": 4,
       "favorite": false,
-      "watch": false,
+      "watch": true,
       "id": 3
     },
     {
+      "cover": "https://source.unsplash.com/1600x900/?movie,Venom No carnage",
       "title": "Venom No carnage",
       "genre": "Commedy",
       "year": "2021-12-24",
@@ -43,6 +47,66 @@
       "favorite": true,
       "watch": false,
       "id": 4
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,Ford Vs Ferrari",
+      "title": "Ford Vs Ferrari",
+      "genre": "Sci-Fi",
+      "year": "2021-12-16",
+      "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus.",
+      "publisher": "Prince",
+      "votes": 0,
+      "favorite": false,
+      "watch": false,
+      "id": 5
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,Iron Man",
+      "title": "Iron Man",
+      "genre": "Sci-Fi",
+      "year": "2021-12-31",
+      "description": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+      "publisher": "Prince",
+      "votes": 2,
+      "favorite": false,
+      "watch": true,
+      "id": 6
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,zcsz ",
+      "title": "zcsz ",
+      "genre": "Romantic",
+      "year": "2021-12-23",
+      "description": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+      "publisher": "Prince",
+      "votes": 4,
+      "favorite": false,
+      "watch": false,
+      "id": 7
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,Mad Max",
+      "title": "Mad Max",
+      "genre": "Romantic",
+      "year": "2021-12-24",
+      "description": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+      "publisher": "Prince",
+      "votes": 2,
+      "favorite": false,
+      "watch": false,
+      "id": 8
+    },
+    {
+      "cover": "https://source.unsplash.com/1600x900/?movie,sifsldkf",
+      "title": "sifsldkf",
+      "genre": "Sci-Fi",
+      "year": "2021-12-24",
+      "description": "xbkjsdv,",
+      "publisher": "Prince",
+      "votes": 1,
+      "favorite": false,
+      "watch": false,
+      "id": 9
     }
   ]
 }
