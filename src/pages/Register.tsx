@@ -29,7 +29,8 @@ function Register() {
 				title: "Password Doesn't Match",
 				text: ``,
 				icon: "error",
-				confirmButtonText: "Ok",
+				timer: 2000,
+				showConfirmButton: false,
 			});
 		}
 
@@ -39,7 +40,8 @@ function Register() {
 				title: "Account Created",
 				text: `Redirecting To Dashboard`,
 				icon: "success",
-				confirmButtonText: "OK",
+				timer: 2000,
+				showConfirmButton: false,
 			});
 			history("/Dashboard");
 		} catch {
@@ -47,7 +49,8 @@ function Register() {
 				title: "Failed To Create Account",
 				text: ``,
 				icon: "info",
-				confirmButtonText: "OK",
+				timer: 2000,
+				showConfirmButton: false,
 			});
 		}
 	};
@@ -66,9 +69,11 @@ function Register() {
 					<div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
 						<div className="w-full">
 							<div className="flex justify-center">
-								<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
-									Movie App
-								</h1>
+								<img
+									className="object-cover w-1/4 h-1/4"
+									src="/logo.png"
+									alt="Movie App Logo"
+								/>
 							</div>
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Create your account

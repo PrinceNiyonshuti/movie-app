@@ -34,7 +34,7 @@ function Details() {
 
 	console.log(details);
 	return (
-		<div>
+		<div className="h-screen bg-gray-100">
 			<NavBar />
 			<div className="px-2">
 				<div className="container mx-auto">

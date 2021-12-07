@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 
 function Login() {
 	// context data
-	const { login,currentUser } = useContext(AuthContext);
+	const { login, currentUser } = useContext(AuthContext);
 	const history = useNavigate();
 
 	// Form data
@@ -24,7 +24,8 @@ function Login() {
 			Swal.fire({
 				title: "Logged In",
 				icon: "success",
-				confirmButtonText: "OK",
+				timer: 2000,
+				showConfirmButton: false,
 			});
 			history("/Dashboard");
 		} catch {
@@ -32,7 +33,8 @@ function Login() {
 				title: "Invalid Credentials",
 				text: ``,
 				icon: "error",
-				confirmButtonText: "OK",
+				timer: 2000,
+				showConfirmButton: false,
 			});
 		}
 	};
@@ -50,9 +52,11 @@ function Login() {
 					<div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
 						<div className="w-full">
 							<div className="flex justify-center">
-								<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
-									Movie App
-								</h1>
+								<img
+									className="object-cover w-1/4 h-1/4"
+									src="/logo.png"
+									alt="Movie App Logo"
+								/>
 							</div>
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
 								Login {currentUser && currentUser.email}

@@ -45,7 +45,7 @@
       "publisher": "Prince",
       "votes": 2,
       "favorite": false,
-      "watch": true,
+      "watch": false,
       "id": 6
     },
     {
@@ -93,7 +93,7 @@
       "publisher": "Prince",
       "votes": 2,
       "favorite": true,
-      "watch": true,
+      "watch": false,
       "id": 12
     },
     {
@@ -116,7 +116,7 @@
       "description": "Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
       "publisher": "Prince",
       "votes": 2,
-      "favorite": true,
+      "favorite": false,
       "watch": false,
       "id": 14
     },
@@ -128,7 +128,7 @@
       "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
       "publisher": "Prince",
       "votes": 6,
-      "favorite": true,
+      "favorite": false,
       "watch": true,
       "id": 15
     },
@@ -139,8 +139,8 @@
       "year": "2021-12-22",
       "description": "dasdasd",
       "publisher": "Prince",
-      "votes": 2,
-      "favorite": true,
+      "votes": 3,
+      "favorite": false,
       "watch": false,
       "id": 16
     },
@@ -152,7 +152,7 @@
       "description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "Prince",
       "votes": 0,
-      "favorite": true,
+      "favorite": false,
       "watch": false,
       "id": 17
     }

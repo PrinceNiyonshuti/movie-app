@@ -39,9 +39,9 @@ function Dashboard() {
 		getMovies();
 	}, []);
 	return (
-		<div>
+		<div className="h-screen bg-gray-100">
 			<NavBar />
-			<div className="h-full bg-gray-100 px-2">
+			<div className=" px-2">
 				<div className="container mx-auto">
 					<div className="float-right mt-2">
 						<select
