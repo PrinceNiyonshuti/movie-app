@@ -127,7 +127,10 @@ function Register() {
 
 							<div className="flex items-center justify-center gap-4">
 								<button className="flex items-center justify-center w-full px-4 py-2 text-sm  border border-gray-300 rounded-lg hover:border-gray-500 focus:border-gray-500">
-									<img src="https://img.icons8.com/color/20/000000/google-logo.png" />{" "}
+									<img
+										src="https://img.icons8.com/color/20/000000/google-logo.png"
+										alt="Auth google"
+									/>
 									&nbsp; Google
 								</button>
 								<button className="flex items-center justify-center w-full px-4 py-2 text-sm border border-gray-300 rounded-lg hover:border-gray-500 focus:border-gray-500">
