@@ -18,7 +18,6 @@ function Details() {
 	// form data
 	const commentRef = useRef<HTMLTextAreaElement>(null);
 	const movie_id = id;
-	const loc = window.location.href;
 
 	// Post Comment
 	const handleComment = (e: React.FormEvent<HTMLFormElement>) => {

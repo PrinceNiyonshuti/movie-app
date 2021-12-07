@@ -8,7 +8,7 @@
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus.",
       "publisher": "Prince",
       "votes": 4,
-      "favorite": true,
+      "favorite": false,
       "watch": true,
       "id": 3
     },
@@ -92,7 +92,7 @@
       "description": "Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "Prince",
       "votes": 2,
-      "favorite": true,
+      "favorite": false,
       "watch": false,
       "id": 12
     },
@@ -128,8 +128,8 @@
       "description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
       "publisher": "Prince",
       "votes": 6,
-      "favorite": false,
-      "watch": true,
+      "favorite": true,
+      "watch": false,
       "id": 15
     },
     {
@@ -139,9 +139,9 @@
       "year": "2021-12-22",
       "description": "dasdasd",
       "publisher": "Prince",
-      "votes": 3,
-      "favorite": false,
-      "watch": false,
+      "votes": 7,
+      "favorite": true,
+      "watch": true,
       "id": 16
     },
     {
@@ -151,8 +151,8 @@
       "year": "2021-12-17",
       "description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "Prince",
-      "votes": 0,
-      "favorite": false,
+      "votes": 1,
+      "favorite": true,
       "watch": false,
       "id": 17
     }
@@ -271,6 +271,24 @@
       "author": "prince@gmail.com",
       "movie_id": "3",
       "id": 19
+    },
+    {
+      "comment": "nice movie",
+      "author": "walter@gmail.com",
+      "movie_id": "14",
+      "id": 20
+    },
+    {
+      "comment": "yolla",
+      "author": "walter@gmail.com",
+      "movie_id": "3",
+      "id": 21
+    },
+    {
+      "comment": "Avocado ",
+      "author": "walter@gmail.com",
+      "movie_id": "3",
+      "id": 22
     }
   ]
 }
