@@ -52,13 +52,13 @@ function NavBar() {
 						<div className="flex-shrink-0 flex items-center">
 							<img
 								className="block lg:hidden h-8 w-auto"
-								src="http://maktechblog.com/wp-content/uploads/2016/04/Google-Play-Movies-TV-new-icon.png"
-								alt="Workflow"
+								src="/logo.png"
+								alt="Movie App"
 							/>
 							<img
 								className="hidden lg:block h-8 w-auto"
-								src="http://maktechblog.com/wp-content/uploads/2016/04/Google-Play-Movies-TV-new-icon.png"
-								alt="Workflow"
+								src="/logo.png"
+								alt="Movie App"
 							/>
 						</div>
 						<div className="hidden sm:block sm:ml-6">

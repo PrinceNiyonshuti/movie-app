@@ -140,7 +140,7 @@
       "description": "dasdasd",
       "publisher": "Prince",
       "votes": 1,
-      "favorite": false,
+      "favorite": true,
       "watch": false,
       "id": 16
     },
