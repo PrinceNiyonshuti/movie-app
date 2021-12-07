@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext, useEffect, useRef, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import Comments from "../components/Comments";
 import NavBar from "../components/NavBar";
@@ -14,6 +14,7 @@ function Details() {
 	const { id } = useParams();
 	const [details, setDetails] = useState<TMovie>();
 	const [messages, setmessages] = useState<IComment["commentList"]>([]);
+	const [movieComments, setMovieComments] = useState<number>();
 
 	// form data
 	const commentRef = useRef<HTMLTextAreaElement>(null);
@@ -64,7 +65,19 @@ function Details() {
 				setmessages(data);
 			});
 		// eslint-disable-next-line
+		countComments();
 	}, [messages]);
+
+	// Count all Movie Comments
+	const countComments = () => {
+		fetch(`http://localhost:8000/Comments?movie_id=${id}`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setMovieComments(data.length);
+			});
+	};
 
 	console.log(window.location.href);
 	return (
@@ -125,7 +138,7 @@ function Details() {
 													Publisher : {details.publisher}
 												</button>
 												<button className="text-lg lg:text-sm font-bold py-2 px-4 rounded bg-orange-200 text-orange-700">
-													0 Comment
+													{movieComments} Comment
 												</button>
 											</div>
 										</div>

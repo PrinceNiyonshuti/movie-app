@@ -6,9 +6,10 @@ import NavBar from "../components/NavBar";
 import { IMovie } from "../context/Types";
 
 function Dashboard() {
-	const [searchInput, setSearchInput] = useState("");
+	
 	// State Data
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
+	const [searchInput, setSearchInput] = useState("");
 
 	// Retrieve all Movies
 	const getMovies = () => {
@@ -41,8 +42,9 @@ function Dashboard() {
 	const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
 		setSearchInput((e.target as HTMLInputElement).value);
 	};
+
 	// Search Movies
-	const searchMovie = (e: React.SyntheticEvent<EventTarget>) => {
+	const searchMovie = () => {
 		if (searchInput === "all") {
 			getMovies();
 		} else {
@@ -65,7 +67,7 @@ function Dashboard() {
 			<NavBar />
 			<div className=" px-2">
 				<div className="container mx-auto">
-					<div className="button-container flex justify-between mb-2">
+					<div className="button-container flex flex-wrap justify-between mb-2">
 						<div className="p-2 flex items-center text-sm">
 							<div className="flex flex-wrap -mx-2 ">
 								<h1 className="text-2xl font-bold text-center mt-4 ml-8">
@@ -79,7 +81,7 @@ function Dashboard() {
 									onChange={handleSearch}
 									type="text"
 									className="px-4 py-2 w-80"
-									placeholder="Search..."
+									placeholder="Search Movie...."
 								/>
 								<button
 									onClick={searchMovie}
@@ -94,7 +96,7 @@ function Dashboard() {
 								</button>
 							</div>
 						</div>
-						<div className="pr-4 flex items-center text-sm">
+						<div className="p-2 pr-4 flex items-center text-sm">
 							<div className="float-right mt-2">
 								<select
 									onChange={getFilteredMovies}

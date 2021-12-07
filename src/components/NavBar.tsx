@@ -107,6 +107,12 @@ function NavBar() {
 										Add Movie
 									</Link>
 									<Link
+										onClick={showMenu}
+										to="/Settings"
+										className="block px-4 py-1 text-sm text-gray-700">
+										Settings
+									</Link>
+									<Link
 										to="/Dashboard"
 										onClick={handleLogOut}
 										className="block px-4 py-2 text-sm text-gray-700">

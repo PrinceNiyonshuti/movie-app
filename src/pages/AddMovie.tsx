@@ -1,10 +1,12 @@
 /** @format */
 
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Swal from "sweetalert2";
 import NavBar from "../components/NavBar";
+import { AuthContext } from "../context/AuthContext";
 
 const AddMovie = () => {
+	const { currentUser } = useContext(AuthContext);
 	// Form variables
 	const movieTitle = useRef<HTMLInputElement>(null);
 	const movieGenre = useRef<HTMLSelectElement>(null);
@@ -18,7 +20,7 @@ const AddMovie = () => {
 		const genre = movieGenre.current?.value;
 		const year = movieYear.current?.value;
 		const description = movieDescr.current?.value;
-		const publisher = "Prince";
+		const publisher = currentUser.email;
 		const votes = 0;
 		const favorite = false;
 		const watch = false;
@@ -60,7 +62,7 @@ const AddMovie = () => {
 					<div className="w-full">
 						<div className="flex justify-center">
 							<h3 className="text-2xl font-bold text-center">
-								New Movies Details 
+								New Movies Details
 							</h3>
 						</div>
 						<form onSubmit={newMovie} ref={movieForm}>

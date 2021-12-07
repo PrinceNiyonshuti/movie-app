@@ -11,6 +11,7 @@ import Register from "../pages/Register";
 import WathcList from "../pages/WathcList";
 import { AuthContext } from "../context/AuthContext";
 import PrivateRoutes from "../PrivateRoutes";
+import Settings from "../pages/Settings";
 
 function Layout() {
 	// Context data Authentication Data
@@ -30,6 +31,10 @@ function Layout() {
 				<Route
 					path="/AddMovie"
 					element={<PrivateRoutes component={AddMovie} />}
+				/>
+				<Route
+					path="/Settings"
+					element={<PrivateRoutes component={Settings} />}
 				/>
 				<Route
 					path="/Detail/:id"
