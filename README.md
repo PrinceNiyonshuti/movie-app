@@ -4,8 +4,9 @@
 
 ## Problems
 
-- use context api
-- Making Protected Routes
+- use context api on Authentication [Fixed]
+- use context api on other functions
+- Making Protected Routes [Fixed]
 - use state without default data [Fixed]
 
 ## Findings

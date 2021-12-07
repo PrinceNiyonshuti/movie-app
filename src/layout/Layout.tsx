@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useContext } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import AddMovie from "../pages/AddMovie";
 import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
