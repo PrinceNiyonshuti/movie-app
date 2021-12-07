@@ -156,5 +156,121 @@
       "watch": false,
       "id": 17
     }
+  ],
+  "Comments": [
+    {
+      "comment": "sad]]]",
+      "author": "teste",
+      "movie_id": "16",
+      "id": 1
+    },
+    {
+      "comment": "not cool bro",
+      "author": "test@gmail.com",
+      "movie_id": "17",
+      "id": 2
+    },
+    {
+      "comment": "asd",
+      "author": "test@gmail.com",
+      "movie_id": "14",
+      "id": 3
+    },
+    {
+      "comment": "sdf",
+      "author": "test@gmail.com",
+      "movie_id": "17",
+      "id": 4
+    },
+    {
+      "comment": "asdas",
+      "author": "test@gmail.com",
+      "movie_id": "17",
+      "id": 5
+    },
+    {
+      "comment": "ddsddd",
+      "author": "test@gmail.com",
+      "movie_id": "12",
+      "id": 6
+    },
+    {
+      "comment": "zxczx",
+      "author": "test@gmail.com",
+      "movie_id": "17",
+      "id": 7
+    },
+    {
+      "comment": "did you see the first one of 1986 ?",
+      "author": "prince@gmail.com",
+      "movie_id": "14",
+      "id": 8
+    },
+    {
+      "comment": "yup",
+      "author": "prince@gmail.com",
+      "movie_id": "14",
+      "id": 9
+    },
+    {
+      "comment": "I got the link for the whole collection ",
+      "author": "prince@gmail.com",
+      "movie_id": "13",
+      "id": 10
+    },
+    {
+      "comment": "show us",
+      "author": "prince@gmail.com",
+      "movie_id": "13",
+      "id": 11
+    },
+    {
+      "comment": "nice actions",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 12
+    },
+    {
+      "comment": "try me",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 13
+    },
+    {
+      "comment": "try me",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 14
+    },
+    {
+      "comment": "try me",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 15
+    },
+    {
+      "comment": "sure ??",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 16
+    },
+    {
+      "comment": "yeah\n",
+      "author": "prince@gmail.com",
+      "movie_id": "8",
+      "id": 17
+    },
+    {
+      "comment": "new movie\n",
+      "author": "prince@gmail.com",
+      "movie_id": "3",
+      "id": 18
+    },
+    {
+      "comment": "got to youtube\n",
+      "author": "prince@gmail.com",
+      "movie_id": "3",
+      "id": 19
+    }
   ]
 }
