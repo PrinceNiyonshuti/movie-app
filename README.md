@@ -40,7 +40,7 @@ before running the project first initialize the project to get tailwindcss modul
 
 #### Clone the repository run
 
-    git clone https://github.com/PrinceNiyonshuti/itinerary-tracker-v2.git
+    git clone https://github.com/PrinceNiyonshuti/movie-app.git
 
 ### to install the packages needed for the project run
 
