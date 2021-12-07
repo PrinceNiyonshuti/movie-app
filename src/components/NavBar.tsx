@@ -20,11 +20,6 @@ function NavBar() {
 	const handleLogOut = async () => {
 		try {
 			await logout();
-			Swal.fire({
-				title: "Logged In",
-				icon: "success",
-				confirmButtonText: "OK",
-			});
 			history("/");
 		} catch {
 			Swal.fire({

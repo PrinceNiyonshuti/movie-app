@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 
 function Login() {
 	// context data
-	const { login } = useContext(AuthContext);
+	const { login,currentUser } = useContext(AuthContext);
 	const history = useNavigate();
 
 	// Form data
@@ -55,7 +55,7 @@ function Login() {
 								</h1>
 							</div>
 							<h1 className="mb-4 text-2xl font-bold text-center text-gray-700">
-								Login
+								Login {currentUser && currentUser.email}
 							</h1>
 							<form onSubmit={handleLogin}>
 								<div>
@@ -95,7 +95,7 @@ function Login() {
 							<hr className="my-8" />
 
 							<div className="flex items-center justify-center gap-4">
-								<button className="flex items-center justify-center w-full px-4 py-2 text-sm text-white border border-gray-300 rounded-lg hover:border-gray-500 focus:border-gray-500">
+								<button className="flex items-center justify-center w-full px-4 py-2 text-sm  border border-gray-300 rounded-lg hover:border-gray-500 focus:border-gray-500">
 									<svg
 										className="w-4 h-4 mr-2"
 										aria-hidden="true"

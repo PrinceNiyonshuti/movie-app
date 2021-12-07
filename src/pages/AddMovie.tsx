@@ -60,7 +60,7 @@ const AddMovie = () => {
 					<div className="w-full">
 						<div className="flex justify-center">
 							<h3 className="text-2xl font-bold text-center">
-								New Movies Details
+								New Movies Details 
 							</h3>
 						</div>
 						<form onSubmit={newMovie} ref={movieForm}>

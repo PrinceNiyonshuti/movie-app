@@ -1,6 +1,6 @@
 /** @format */
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { IMovie } from "../context/Types";
 
@@ -24,11 +24,12 @@ const Movies = (props: IMovie) => {
 			//action done
 			Swal.fire({
 				title: "Favorited Movie",
-				text: "Movie added to favorite",
 				icon: "success",
-				confirmButtonText: "Done",
+				timer: 2000,
+				showConfirmButton: false,
 			}).then(function () {
-				window.location.reload();
+				// window.location.href = "/Dashboard";
+				<Navigate to="/Dashboard" />;
 			});
 		});
 	};
@@ -52,7 +53,7 @@ const Movies = (props: IMovie) => {
 				icon: "success",
 				confirmButtonText: "Done",
 			}).then(function () {
-				window.location.reload();
+				// window.location.reload();
 			});
 		});
 	};
@@ -80,7 +81,7 @@ const Movies = (props: IMovie) => {
 				icon: "success",
 				confirmButtonText: "Done",
 			}).then(function () {
-				window.location.reload();
+				// window.location.reload();
 			});
 		});
 	};
