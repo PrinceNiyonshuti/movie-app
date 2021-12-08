@@ -1,10 +1,9 @@
 /** @format */
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Movies from "../components/Movies";
 import NavBar from "../components/NavBar";
 import { AuthContext } from "../context/AuthContext";
-import { IMovie } from "../context/Types";
 
 function Dashboard() {
 	// Context Api Data

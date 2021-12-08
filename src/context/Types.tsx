@@ -63,4 +63,7 @@ export type AuthContextState = {
 	getFilteredMovies: (e: any) => void;
 	handleSearch: (e: any) => void;
 	searchMovie: () => void;
+	handleFavorite: (movieId: number, favStat: boolean) => void;
+	handleVote: (movieId: number, vote: number) => void;
+	handleWatchList: (movieId: number, likeStat: boolean) => void;
 };

@@ -1,91 +1,15 @@
 /** @format */
 
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import { IMovie } from "../context/Types";
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 
 const Movies = (props: IMovie) => {
-	// Handle favorite
-	const handleFavorite = (movieId: number, favStat: boolean) => {
-		let favorite = false;
-		if (favStat) {
-			favorite = false;
-		} else {
-			favorite = true;
-		}
-		const fav = { favorite };
-		fetch(`http://localhost:8000/movieList/` + movieId, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(fav),
-		}).then(() => {
-			//action done
-			Swal.fire({
-				title: "Favorited Movie",
-				icon: "success",
-				timer: 2000,
-				showConfirmButton: false,
-			}).then(function () {
-				// window.location.href = "/Dashboard";
-			});
-		});
-	};
+	// Context Api Data
+	const { handleFavorite, handleVote, handleWatchList } =
+		useContext(AuthContext);
 
-	// Handle user votes
-	const handleVote = (movieId: number, vote: number) => {
-		const vot = 1;
-		const votes = vote + vot;
-		const voter = { votes };
-		fetch(`http://localhost:8000/movieList/` + movieId, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(voter),
-		}).then(() => {
-			//action done
-			Swal.fire({
-				title: "Voted Movie",
-				text: "Thanks For Voting The Movie",
-				icon: "success",
-				timer: 2000,
-				showConfirmButton: false,
-			}).then(function () {
-				// window.location.reload();
-			});
-		});
-	};
-
-	// Handle watch
-	const handleWatchList = (movieId: number, likeStat: boolean) => {
-		let watch = false;
-		if (likeStat) {
-			watch = false;
-		} else {
-			watch = true;
-		}
-		const watcher = { watch };
-		fetch(`http://localhost:8000/movieList/` + movieId, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(watcher),
-		}).then(() => {
-			//action done
-			Swal.fire({
-				title: "Watch Listed Movie",
-				text: "Movie added to Watch List",
-				icon: "success",
-				timer: 2000,
-				showConfirmButton: false,
-			}).then(function () {
-				// window.location.reload();
-			});
-		});
-	};
 	return (
 		<div className="flex flex-wrap -mx-2 ">
 			{props.movie.map((movie) => (

@@ -3,6 +3,7 @@
 import { createContext, useEffect, useState } from "react";
 import { AuthContextState, IMovie } from "./Types";
 import { auth } from "../firebase";
+import Swal from "sweetalert2";
 
 const contextDefaultValue: AuthContextState = {
 	currentUser: "",
@@ -16,6 +17,9 @@ const contextDefaultValue: AuthContextState = {
 	getFilteredMovies: () => {},
 	handleSearch: () => {},
 	searchMovie: () => {},
+	handleFavorite: () => {},
+	handleVote: () => {},
+	handleWatchList: () => {},
 };
 
 export const AuthContext = createContext(contextDefaultValue);
@@ -103,6 +107,88 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		// alert(searchInput);
 	};
 
+	// Handle favorite
+	const handleFavorite = (movieId: number, favStat: boolean) => {
+		let favorite = false;
+		if (favStat) {
+			favorite = false;
+		} else {
+			favorite = true;
+		}
+		const fav = { favorite };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(fav),
+		}).then(() => {
+			//action done
+			Swal.fire({
+				title: "Favorited Movie",
+				icon: "success",
+				timer: 2000,
+				showConfirmButton: false,
+			}).then(function () {
+				getMovies();
+			});
+		});
+	};
+
+	// Handle user votes
+	const handleVote = (movieId: number, vote: number) => {
+		const vot = 1;
+		const votes = vote + vot;
+		const voter = { votes };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(voter),
+		}).then(() => {
+			//action done
+			Swal.fire({
+				title: "Voted Movie",
+				text: "Thanks For Voting The Movie",
+				icon: "success",
+				timer: 2000,
+				showConfirmButton: false,
+			}).then(function () {
+				getMovies();
+			});
+		});
+	};
+
+	// Handle watch
+	const handleWatchList = (movieId: number, likeStat: boolean) => {
+		let watch = false;
+		if (likeStat) {
+			watch = false;
+		} else {
+			watch = true;
+		}
+		const watcher = { watch };
+		fetch(`http://localhost:8000/movieList/` + movieId, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(watcher),
+		}).then(() => {
+			//action done
+			Swal.fire({
+				title: "Watch Listed Movie",
+				text: "Movie added to Watch List",
+				icon: "success",
+				timer: 2000,
+				showConfirmButton: false,
+			}).then(function () {
+				getMovies();
+			});
+		});
+	};
+
 	// Count all User Movies
 	const countMyMovies = () => {
 		if (currentUser) {
@@ -147,6 +233,9 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		searchInput,
 		handleSearch,
 		searchMovie,
+		handleFavorite,
+		handleVote,
+		handleWatchList,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
