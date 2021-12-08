@@ -10,11 +10,11 @@ import { TMovie, IComment } from "../context/Types";
 
 function Details() {
 	// Context data
-	const { currentUser } = useContext(AuthContext);
+	const { currentUser, movieComments, countComments, messages, getComments } =
+		useContext(AuthContext);
 	const { id } = useParams();
 	const [details, setDetails] = useState<TMovie>();
-	const [messages, setmessages] = useState<IComment["commentList"]>([]);
-	const [movieComments, setMovieComments] = useState<number>();
+	// const [messages, setmessages] = useState<IComment["commentList"]>([]);
 
 	// form data
 	const commentRef = useRef<HTMLTextAreaElement>(null);
@@ -39,6 +39,9 @@ function Details() {
 				icon: "success",
 				timer: 2000,
 				showConfirmButton: false,
+			}).then(function () {
+				countComments(id);
+				getComments(id);
 			});
 		});
 	};
@@ -53,31 +56,9 @@ function Details() {
 				setDetails(data);
 			});
 		// eslint-disable-next-line
+		countComments(id);
+		getComments(id);
 	}, []);
-
-	// get comments
-	useEffect(() => {
-		fetch(`http://localhost:8000/Comments?movie_id=${id}`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setmessages(data);
-			});
-		// eslint-disable-next-line
-		countComments();
-	}, []);
-
-	// Count all Movie Comments
-	const countComments = () => {
-		fetch(`http://localhost:8000/Comments?movie_id=${id}`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMovieComments(data.length);
-			});
-	};
 
 	console.log(window.location.href);
 	return (

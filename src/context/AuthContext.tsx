@@ -1,7 +1,7 @@
 /** @format */
 
 import { createContext, useEffect, useState } from "react";
-import { AuthContextState, IMovie } from "./Types";
+import { AuthContextState, IComment, IMovie } from "./Types";
 import { auth } from "../firebase";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,7 @@ const contextDefaultValue: AuthContextState = {
 	currentUser: "",
 	myMovies: "",
 	myComments: "",
+	movieComments: "",
 	searchInput: "",
 	movieData: [],
 	register: () => {},
@@ -20,6 +21,9 @@ const contextDefaultValue: AuthContextState = {
 	handleFavorite: () => {},
 	handleVote: () => {},
 	handleWatchList: () => {},
+	countComments: () => {},
+	messages: [],
+	getComments: () => {},
 };
 
 export const AuthContext = createContext(contextDefaultValue);
@@ -35,6 +39,8 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 	const [searchInput, setSearchInput] = useState<any | null>();
 	const [myMovies, setMyMovies] = useState<number>();
 	const [myComments, setMyComments] = useState<number>();
+	const [movieComments, setMovieComments] = useState<string>();
+	const [messages, setmessages] = useState<IComment["commentList"]>([]);
 
 	// Create Account
 	const register = async (email: string, password: string) => {
@@ -189,6 +195,28 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		});
 	};
 
+	// Count all Movie Comments
+	const countComments = (movie_id: string | undefined) => {
+		fetch(`http://localhost:8000/Comments?movie_id=${movie_id}`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setMovieComments(data.length);
+			});
+	};
+
+	// Count all Movie Comments
+	const getComments = (movie_id: string | undefined) => {
+		fetch(`http://localhost:8000/Comments?movie_id=${movie_id}`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setmessages(data);
+			});
+	};
+
 	// Count all User Movies
 	const countMyMovies = () => {
 		if (currentUser) {
@@ -236,6 +264,10 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		handleFavorite,
 		handleVote,
 		handleWatchList,
+		countComments,
+		movieComments,
+		messages,
+		getComments,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

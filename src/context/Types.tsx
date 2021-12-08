@@ -54,8 +54,10 @@ export interface ILogin {
 export type AuthContextState = {
 	currentUser: any | null;
 	movieData: IMovie["movie"];
+	messages: IComment["commentList"];
 	myMovies: any | null;
 	myComments: any | null;
+	movieComments: any | null;
 	searchInput: any | null;
 	register: (email: string, password: string) => void;
 	login: (email: string, password: string) => void;
@@ -66,4 +68,6 @@ export type AuthContextState = {
 	handleFavorite: (movieId: number, favStat: boolean) => void;
 	handleVote: (movieId: number, vote: number) => void;
 	handleWatchList: (movieId: number, likeStat: boolean) => void;
+	countComments: (movie_id: string | undefined) => void;
+	getComments: (movie_id: string | undefined) => void;
 };
