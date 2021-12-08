@@ -4,7 +4,6 @@ export interface IRegister {
 	email: string;
 	password: string;
 }
-
 export interface IMovie {
 	movie: {
 		cover: string;
@@ -54,7 +53,14 @@ export interface ILogin {
 
 export type AuthContextState = {
 	currentUser: any | null;
+	movieData: IMovie["movie"];
+	myMovies: any | null;
+	myComments: any | null;
+	searchInput: any | null;
 	register: (email: string, password: string) => void;
 	login: (email: string, password: string) => void;
 	logout: () => void;
+	getFilteredMovies: (e: any) => void;
+	handleSearch: (e: any) => void;
+	searchMovie: () => void;
 };

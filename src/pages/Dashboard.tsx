@@ -1,67 +1,16 @@
 /** @format */
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Movies from "../components/Movies";
 import NavBar from "../components/NavBar";
+import { AuthContext } from "../context/AuthContext";
 import { IMovie } from "../context/Types";
 
 function Dashboard() {
-	
-	// State Data
-	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
-	const [searchInput, setSearchInput] = useState("");
+	// Context Api Data
+	const { movieData, getFilteredMovies, handleSearch, searchMovie } =
+		useContext(AuthContext);
 
-	// Retrieve all Movies
-	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList?_sort=id&_order=DESC`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMovieData(data);
-			});
-	};
-
-	// Filter Movies
-	const getFilteredMovies = (e: React.SyntheticEvent<EventTarget>) => {
-		let search = (e.target as HTMLSelectElement).value;
-		if (search === "all") {
-			getMovies();
-		} else {
-			fetch(`http://localhost:8000/movieList?genre=${search}`)
-				.then((res) => {
-					return res.json();
-				})
-				.then((data) => {
-					setMovieData(data);
-				});
-		}
-	};
-
-	// get input search data
-	const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
-		setSearchInput((e.target as HTMLInputElement).value);
-	};
-
-	// Search Movies
-	const searchMovie = () => {
-		if (searchInput === "all") {
-			getMovies();
-		} else {
-			fetch(`http://localhost:8000/movieList/?title_like=${searchInput}`)
-				.then((res) => {
-					return res.json();
-				})
-				.then((data) => {
-					setMovieData(data);
-				});
-		}
-		// alert(searchInput);
-	};
-
-	useEffect(() => {
-		getMovies();
-	}, []);
 	return (
 		<div className="h-screen bg-gray-100">
 			<NavBar />

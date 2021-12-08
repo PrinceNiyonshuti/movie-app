@@ -22,12 +22,12 @@
 
 - The project took me 6 hours
 
-# 3. Your coding style and standards
+# 3. Coding style and standards
 
 - the coding style is used was line coding and error control and
   the standard of using safe ,secure and portable codes
 
-# 4. Your source code files plus the final
+# 4. Source code files 
 
 [Link To Repository](https://github.com/PrinceNiyonshuti/movie-app.git)
 

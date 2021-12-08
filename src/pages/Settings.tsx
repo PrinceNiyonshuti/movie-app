@@ -6,39 +6,39 @@ import { AuthContext } from "../context/AuthContext";
 
 function Settings() {
 	// Context Api Data
-	const { currentUser } = useContext(AuthContext);
+	const { currentUser, myMovies, myComments } = useContext(AuthContext);
 
 	// State Data
-	const [myMovies, setMyMovies] = useState<number>();
-	const [myComments, setMyComments] = useState<number>();
+	// const [myMovies, setMyMovies] = useState<number>();
+	// const [myComments, setMyComments] = useState<number>();
 
-	// Count all User Movies
-	const countMyMovies = () => {
-		fetch(`http://localhost:8000/movieList?publisher=${currentUser.email}`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMyMovies(data.length);
-			});
-	};
+	// // Count all User Movies
+	// const countMyMovies = () => {
+	// 	fetch(`http://localhost:8000/movieList?publisher=${currentUser.email}`)
+	// 		.then((res) => {
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setMyMovies(data.length);
+	// 		});
+	// };
 
-	// Count all User Comments
-	const countMyComments = () => {
-		fetch(`http://localhost:8000/Comments?author=${currentUser.email}`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMyComments(data.length);
-			});
-	};
+	// // Count all User Comments
+	// const countMyComments = () => {
+	// 	fetch(`http://localhost:8000/Comments?author=${currentUser.email}`)
+	// 		.then((res) => {
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setMyComments(data.length);
+	// 		});
+	// };
 
 	// Render and run function on component mount
-	useEffect(() => {
-		countMyMovies();
-		countMyComments();
-	}, []);
+	// useEffect(() => {
+	// 	countMyMovies();
+	// 	countMyComments();
+	// }, []);
 
 	return (
 		<div className="h-screen bg-gray-100">
