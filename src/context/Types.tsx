@@ -54,6 +54,7 @@ export interface ILogin {
 export type AuthContextState = {
 	currentUser: any | null;
 	movieData: IMovie["movie"];
+	favMovies: IMovie["movie"];
 	messages: IComment["commentList"];
 	myMovies: any | null;
 	myComments: any | null;

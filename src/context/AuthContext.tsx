@@ -24,6 +24,7 @@ const contextDefaultValue: AuthContextState = {
 	countComments: () => {},
 	messages: [],
 	getComments: () => {},
+	favMovies: [],
 };
 
 export const AuthContext = createContext(contextDefaultValue);
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 	// state data
 	const [currentUser, setCurrentUser] = useState<any | null>();
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
+	const [favMovies, setfavMovies] = useState<IMovie["movie"]>([]);
 	const [searchInput, setSearchInput] = useState<any | null>();
 	const [myMovies, setMyMovies] = useState<number>();
 	const [myComments, setMyComments] = useState<number>();
@@ -73,6 +75,17 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 			})
 			.then((data) => {
 				setMovieData(data);
+			});
+	};
+
+	// Retrieve all Favorite Movies
+	const getFavMovies = () => {
+		fetch(`http://localhost:8000/movieList?favorite=true`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setfavMovies(data);
 			});
 	};
 
@@ -137,6 +150,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 				showConfirmButton: false,
 			}).then(function () {
 				getMovies();
+				getFavMovies();
 			});
 		});
 	};
@@ -162,6 +176,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 				showConfirmButton: false,
 			}).then(function () {
 				getMovies();
+				getFavMovies();
 			});
 		});
 	};
@@ -191,6 +206,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 				showConfirmButton: false,
 			}).then(function () {
 				getMovies();
+				getFavMovies();
 			});
 		});
 	};
@@ -245,6 +261,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 
 	useEffect(() => {
 		getMovies();
+		getFavMovies();
 		countMyMovies();
 		countMyComments();
 	}, []);
@@ -268,6 +285,8 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		movieComments,
 		messages,
 		getComments,
+		favMovies,
+		getFavMovies,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

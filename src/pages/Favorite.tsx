@@ -1,25 +1,27 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Movies from "../components/Movies";
 import NavBar from "../components/NavBar";
-import { IMovie } from "../context/Types";
+import { AuthContext } from "../context/AuthContext";
 
 function Favorite() {
-	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
+	// Context Api Data
+	const { favMovies } = useContext(AuthContext);
+	// const [favMovies, setfavMovies] = useState<IMovie["movie"]>([]);
 	// Retrieve all Movies
-	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList?favorite=true`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMovieData(data);
-			});
-	};
-	useEffect(() => {
-		getMovies();
-	}, []);
+	// const getFavMovies = () => {
+	// 	fetch(`http://localhost:8000/movieList?favorite=true`)
+	// 		.then((res) => {
+	// 			return res.json();
+	// 		})
+	// 		.then((data) => {
+	// 			setfavMovies(data);
+	// 		});
+	// };
+	// useEffect(() => {
+	// 	getFavMovies();
+	// }, []);
 
 	return (
 		<div className="h-screen bg-gray-100">
@@ -32,12 +34,12 @@ function Favorite() {
 						</h1>
 					</div>
 					<div>
-						{/* {movieData
+						{/* {favMovies
 							.filter((movies) => movies.favorite == true)
 							.map((movie) => (
 								<p>{movie.title}</p>
 							))} */}
-						<Movies movie={movieData} />
+						<Movies movie={favMovies} />
 					</div>
 				</div>
 			</div>
