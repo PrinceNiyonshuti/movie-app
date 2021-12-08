@@ -24,6 +24,8 @@ const contextDefaultValue: AuthContextState = {
 	countComments: () => {},
 	messages: [],
 	getComments: () => {},
+	countMyMovies: () => {},
+	countMyComments: () => {},
 	favMovies: [],
 	watchMovie: [],
 };
@@ -250,23 +252,19 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 	};
 
 	// Count all User Movies
-	const countMyMovies = () => {
-		if (currentUser) {
-			fetch(`http://localhost:8000/movieList?publisher=${currentUser.email}`)
-				.then((res) => {
-					return res.json();
-				})
-				.then((data) => {
-					setMyMovies(data.length);
-				});
-		} else {
-			setMyMovies(0);
-		}
+	const countMyMovies = (user: string | undefined) => {
+		fetch(`http://localhost:8000/movieList?publisher=${user}`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setMyMovies(data.length);
+			});
 	};
 
 	// Count all User Comments
-	const countMyComments = () => {
-		fetch(`http://localhost:8000/Comments`)
+	const countMyComments = (user: string | undefined) => {
+		fetch(`http://localhost:8000/Comments?author=${user}`)
 			.then((res) => {
 				return res.json();
 			})
@@ -279,8 +277,6 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		getMovies();
 		getFavMovies();
 		getWatchMovies();
-		countMyMovies();
-		countMyComments();
 	}, []);
 
 	const value = {
@@ -305,7 +301,9 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		favMovies,
 		getFavMovies,
 		watchMovie,
-		getWatchMovies
+		getWatchMovies,
+		countMyMovies,
+		countMyComments,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

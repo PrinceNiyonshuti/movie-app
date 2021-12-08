@@ -72,4 +72,6 @@ export type AuthContextState = {
 	handleWatchList: (movieId: number, likeStat: boolean) => void;
 	countComments: (movie_id: string | undefined) => void;
 	getComments: (movie_id: string | undefined) => void;
+	countMyMovies: (user: string | undefined) => void;
+	countMyComments: (user: string | undefined) => void;
 };

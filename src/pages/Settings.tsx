@@ -6,8 +6,10 @@ import { AuthContext } from "../context/AuthContext";
 
 function Settings() {
 	// Context Api Data
-	const { currentUser, myMovies, myComments } = useContext(AuthContext);
-
+	const { currentUser, myMovies, myComments, countMyMovies, countMyComments } =
+		useContext(AuthContext);
+		countMyMovies(currentUser.email);
+		countMyComments(currentUser.email);
 	// State Data
 	// const [myMovies, setMyMovies] = useState<number>();
 	// const [myComments, setMyComments] = useState<number>();
