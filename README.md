@@ -5,7 +5,7 @@
 ## Problems
 
 - use context api on Authentication [Fixed]
-- use context api on other functions
+- use context api on other functions [Fixed]
 - Making Protected Routes [Fixed]
 - use state without default data [Fixed]
 
@@ -82,7 +82,7 @@ before running the project first initialize the project to get tailwindcss modul
     1. npm run prince
 
 
-- remove confirmation 
+<!-- - remove confirmation 
 - logout confirmation
 - movie context 
-- remove snapshot of login and register when auth
+- remove snapshot of login and register when auth -->
