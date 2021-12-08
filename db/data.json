@@ -20,7 +20,7 @@
       "description": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "prince@gmail.com",
       "votes": 7,
-      "favorite": false,
+      "favorite": true,
       "watch": false,
       "id": 4
     },
@@ -140,7 +140,7 @@
       "description": "dasdasd",
       "publisher": "walter@gmail.com",
       "votes": 7,
-      "favorite": true,
+      "favorite": false,
       "watch": true,
       "id": 16
     },
