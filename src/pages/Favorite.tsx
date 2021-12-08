@@ -8,20 +8,6 @@ import { AuthContext } from "../context/AuthContext";
 function Favorite() {
 	// Context Api Data
 	const { favMovies } = useContext(AuthContext);
-	// const [favMovies, setfavMovies] = useState<IMovie["movie"]>([]);
-	// Retrieve all Movies
-	// const getFavMovies = () => {
-	// 	fetch(`http://localhost:8000/movieList?favorite=true`)
-	// 		.then((res) => {
-	// 			return res.json();
-	// 		})
-	// 		.then((data) => {
-	// 			setfavMovies(data);
-	// 		});
-	// };
-	// useEffect(() => {
-	// 	getFavMovies();
-	// }, []);
 
 	return (
 		<div className="h-screen bg-gray-100">

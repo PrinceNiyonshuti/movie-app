@@ -25,6 +25,7 @@ const contextDefaultValue: AuthContextState = {
 	messages: [],
 	getComments: () => {},
 	favMovies: [],
+	watchMovie: [],
 };
 
 export const AuthContext = createContext(contextDefaultValue);
@@ -37,7 +38,8 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 	// state data
 	const [currentUser, setCurrentUser] = useState<any | null>();
 	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
-	const [favMovies, setfavMovies] = useState<IMovie["movie"]>([]);
+	const [favMovies, setFavMovies] = useState<IMovie["movie"]>([]);
+	const [watchMovie, setWatchMovie] = useState<IMovie["movie"]>([]);
 	const [searchInput, setSearchInput] = useState<any | null>();
 	const [myMovies, setMyMovies] = useState<number>();
 	const [myComments, setMyComments] = useState<number>();
@@ -85,7 +87,18 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 				return res.json();
 			})
 			.then((data) => {
-				setfavMovies(data);
+				setFavMovies(data);
+			});
+	};
+
+	// Retrieve all Movies
+	const getWatchMovies = () => {
+		fetch(`http://localhost:8000/movieList?watch=true`)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setWatchMovie(data);
 			});
 	};
 
@@ -151,6 +164,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 			}).then(function () {
 				getMovies();
 				getFavMovies();
+				getWatchMovies();
 			});
 		});
 	};
@@ -177,6 +191,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 			}).then(function () {
 				getMovies();
 				getFavMovies();
+				getWatchMovies();
 			});
 		});
 	};
@@ -207,6 +222,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 			}).then(function () {
 				getMovies();
 				getFavMovies();
+				getWatchMovies();
 			});
 		});
 	};
@@ -262,6 +278,7 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 	useEffect(() => {
 		getMovies();
 		getFavMovies();
+		getWatchMovies();
 		countMyMovies();
 		countMyComments();
 	}, []);
@@ -287,6 +304,8 @@ const AuthProvider = ({ children }: AuthContextProviderProps) => {
 		getComments,
 		favMovies,
 		getFavMovies,
+		watchMovie,
+		getWatchMovies
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

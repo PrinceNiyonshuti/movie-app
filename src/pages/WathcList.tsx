@@ -1,46 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import Movies from '../components/Movies';
-import NavBar from '../components/NavBar';
+/** @format */
+
+import React, { useContext, useEffect, useState } from "react";
+import Movies from "../components/Movies";
+import NavBar from "../components/NavBar";
 import { IMovie } from "../context/Types";
+import { AuthContext } from "../context/AuthContext";
 
 function WathcList() {
-	const [movieData, setMovieData] = useState<IMovie["movie"]>([]);
-	// Retrieve all Movies
-	const getMovies = () => {
-		fetch(`http://localhost:8000/movieList?watch=true`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				setMovieData(data);
-			});
-	};
-	useEffect(() => {
-		getMovies();
-	}, []);
-    return (
-			<div className="h-screen bg-gray-100">
-				<NavBar />
-				<div className="px-2">
-					<div className="container mx-auto">
-						<div className="flex flex-wrap -mx-2 ">
-							<h1 className="text-2xl font-bold text-center mt-4 ml-8">
-								My Watch List Movies
-							</h1>
-						</div>
-						<div>
-							<Movies movie={movieData} />
-							{/* {movieData
-								.filter((movies) => movies.watch == true)
-								.map((movie) => (
-									// <p>{ movie.title }</p>
-									<Movies movie={movieData} />
-								))} */}
-						</div>
+	const { watchMovie } = useContext(AuthContext);
+
+	return (
+		<div className="h-screen bg-gray-100">
+			<NavBar />
+			<div className="px-2">
+				<div className="container mx-auto">
+					<div className="flex flex-wrap -mx-2 ">
+						<h1 className="text-2xl font-bold text-center mt-4 ml-8">
+							My Watch List Movies
+						</h1>
+					</div>
+					<div>
+						<Movies movie={watchMovie} />
 					</div>
 				</div>
 			</div>
-		);
+		</div>
+	);
 }
 
-export default WathcList
+export default WathcList;

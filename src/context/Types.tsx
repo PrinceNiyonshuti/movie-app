@@ -55,6 +55,7 @@ export type AuthContextState = {
 	currentUser: any | null;
 	movieData: IMovie["movie"];
 	favMovies: IMovie["movie"];
+	watchMovie: IMovie["movie"];
 	messages: IComment["commentList"];
 	myMovies: any | null;
 	myComments: any | null;
