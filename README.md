@@ -38,18 +38,19 @@
 before running the project first initialize the project to get tailwindcss modules , using the steps below
 
 ### Requiments
-
-- create firebase account 
-- create app and get the api keys
-- create enviroment variable called 
+ 
+#### create firebase account
+#### create app and get the api keys
+#### create enviroment variable called
     .env.local
-- in .env.local add corresponding data 
+#### in .env.local add corresponding data from firebase
     REACT_APP_FIREBASE_API_KEY=
     REACT_APP_FIREBASE_AUTH_DOMAIN=
     REACT_APP_FIREBASE_PROJECT_ID=
     REACT_APP_FIREBASE_STORAGE_BUCKET=
     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
     REACT_APP_FIREBASE_APP_ID=
+    
 ### steps to follow installing the project
 
 #### Clone the repository run
@@ -76,9 +77,6 @@ before running the project first initialize the project to get tailwindcss modul
 - Concurrently
 
 ## Documentation and requirements 
-
-- 
-
 ### To Run the app use
 
     1. npm run prince
