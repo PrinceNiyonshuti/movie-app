@@ -1,9 +1,8 @@
 /** @format */
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import Movies from "../components/Movies";
 import NavBar from "../components/NavBar";
-import { IMovie } from "../context/Types";
 import { AuthContext } from "../context/AuthContext";
 
 function WathcList() {
