@@ -1,6 +1,6 @@
 /** @format */
 
-import { TComment, IComment } from "../context/Types";
+import { IComment } from "../context/Types";
 
 function Comments(props: IComment) {
 	return (

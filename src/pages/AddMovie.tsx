@@ -14,6 +14,28 @@ const AddMovie = () => {
 	const movieDescr = useRef<HTMLTextAreaElement>(null);
 	const movieForm = useRef<HTMLFormElement>(null);
 
+	// image upload
+	// const types = ["image/jpg", "image/jpeg", "image/png", "image/PNG"];
+	// const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+	// 	const cover = e.target.files;
+	// 	if (cover) {
+	// 		if (cover && types.includes(cover[0].type)) {
+	// 			setPoster(cover[0]);
+	// 			console.log(cover[0].type);
+	// 			console.log(cover[0].name);
+	// 		} else {
+	// 			Swal.fire({
+	// 				title: "Invalid Image Type",
+	// 				text: "Valid Image Types [png , jpeg , jpg ]",
+	// 				icon: "error",
+	// 				timer: 2000,
+	// 				showConfirmButton: false,
+	// 			});
+	// 		}
+	// 	}
+	// };
+
+	// Save Movie
 	const newMovie = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const title = movieTitle.current?.value;

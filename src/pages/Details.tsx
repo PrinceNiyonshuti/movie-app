@@ -66,7 +66,7 @@ function Details() {
 			});
 		// eslint-disable-next-line
 		countComments();
-	}, [messages]);
+	}, []);
 
 	// Count all Movie Comments
 	const countComments = () => {

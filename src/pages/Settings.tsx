@@ -32,9 +32,9 @@ function Settings() {
 			.then((data) => {
 				setMyComments(data.length);
 			});
-    };
-    
-    // Render and run function on component mount
+	};
+
+	// Render and run function on component mount
 	useEffect(() => {
 		countMyMovies();
 		countMyComments();
