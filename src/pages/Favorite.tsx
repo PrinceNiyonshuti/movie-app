@@ -20,12 +20,20 @@ function Favorite() {
 						</h1>
 					</div>
 					<div>
-						{/* {favMovies
-							.filter((movies) => movies.favorite == true)
-							.map((movie) => (
-								<p>{movie.title}</p>
-							))} */}
-						<Movies movie={favMovies} />
+						{favMovies.length >= 1 ? (
+							<Movies movie={favMovies} />
+						) : (
+							<div className="hero container max-w-screen-lg mx-auto pb-10">
+								<img
+									src="/no-movie.png"
+									className="mx-auto"
+									alt="Movie Not Found"
+								/>
+								<h1 className="text-2xl font-bold text-center mt-4 ml-8">
+									No Favorite Movie Found
+								</h1>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
