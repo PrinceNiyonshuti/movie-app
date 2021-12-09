@@ -39,6 +39,7 @@ before running the project first initialize the project to get tailwindcss modul
 
 ### Requiments
  
+#### install typescript 
 #### create firebase account
 #### create app and get the api keys
 #### create enviroment variable called

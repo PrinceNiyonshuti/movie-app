@@ -104,8 +104,8 @@
       "description": "Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "kal@gmail.com",
       "votes": 1,
-      "favorite": false,
-      "watch": false,
+      "favorite": true,
+      "watch": true,
       "id": 13
     },
     {
@@ -140,8 +140,8 @@
       "description": "dasdasd",
       "publisher": "walter@gmail.com",
       "votes": 7,
-      "favorite": false,
-      "watch": false,
+      "favorite": true,
+      "watch": true,
       "id": 16
     },
     {
@@ -153,7 +153,7 @@
       "publisher": "walter@gmail.com",
       "votes": 4,
       "favorite": false,
-      "watch": true,
+      "watch": false,
       "id": 17
     },
     {
@@ -164,7 +164,7 @@
       "description": "Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh.",
       "publisher": "zatec@gmail.com",
       "votes": 1,
-      "favorite": false,
+      "favorite": true,
       "watch": false,
       "id": 18
     }
