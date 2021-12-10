@@ -104,8 +104,8 @@
       "description": "Sed porttitor lectus nibh. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
       "publisher": "kal@gmail.com",
       "votes": 1,
-      "favorite": true,
-      "watch": true,
+      "favorite": false,
+      "watch": false,
       "id": 13
     },
     {
@@ -139,7 +139,7 @@
       "year": "2021-12-22",
       "description": "dasdasd",
       "publisher": "walter@gmail.com",
-      "votes": 7,
+      "votes": 8,
       "favorite": true,
       "watch": true,
       "id": 16
@@ -385,6 +385,12 @@
       "author": "zatec@gmail.com",
       "movie_id": "15",
       "id": 36
+    },
+    {
+      "comment": "hello",
+      "author": "zatec@gmail.com",
+      "movie_id": "18",
+      "id": 37
     }
   ]
 }
