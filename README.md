@@ -88,3 +88,8 @@ before running the project first initialize the project to get tailwindcss modul
 - logout confirmation
 - movie context 
 - remove snapshot of login and register when auth -->
+
+## Feedback and issues
+
+Any issue and feedback from the app don't hesitate to make an issue
+
