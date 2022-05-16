@@ -1,5 +1,7 @@
 # Movie App
 
+Movie application for learning purpose 
+
 # 1. Problems and findings
 
 ## Problems
