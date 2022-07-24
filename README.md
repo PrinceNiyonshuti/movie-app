@@ -33,7 +33,6 @@ Movie application for learning purpose
 
 [Link To Repository](https://github.com/PrinceNiyonshuti/movie-app.git)
 
-[Link To Deployed App]()
 
 # 5. Documentation of your code where necessary
 
