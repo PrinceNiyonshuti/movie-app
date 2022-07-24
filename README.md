@@ -33,7 +33,6 @@ Movie application for learning purpose
 
 [Link To Repository](https://github.com/PrinceNiyonshuti/movie-app.git)
 
-[Link To Deployed App]()
 
 # 5. Documentation of your code where necessary
 
@@ -84,12 +83,6 @@ before running the project first initialize the project to get tailwindcss modul
 ### To Run the app use
 
     1. npm run prince
-
-
-<!-- - remove confirmation 
-- logout confirmation
-- movie context 
-- remove snapshot of login and register when auth -->
 
 ## Feedback and issues
 

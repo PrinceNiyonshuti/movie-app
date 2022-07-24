@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import Comments from "../components/Comments";
 import NavBar from "../components/NavBar";
 import { AuthContext } from "../context/AuthContext";
-import { TMovie, IComment } from "../context/Types";
+import { TMovie } from "../context/Types";
 
 function Details() {
 	// Context data
